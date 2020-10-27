@@ -16,12 +16,9 @@
         - name: GigabitEthernet2
           enabled: true
     - name: Configure IP address on Loopback0
-      ios_l3_interfaces:
-        config:
-        - name: "{{ item.key }}"
-          ipv4:
-          - address: "{{ item.value }}"
+      ios_config:
+        lines:
+        - description used for routing
+        - ip address "{{ item.value }}" 255.255.255.255
+        parents: interface "{{ item.key }}"
       loop: "{{ loopbacks | dict2items }}"
-
-
-
