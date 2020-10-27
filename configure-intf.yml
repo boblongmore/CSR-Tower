@@ -20,8 +20,8 @@
         config:
         - name: Loopback0
           ipv4:
-          - address: 
-            loop: "{{ loopbacks }}"
+          - address: "{{ item }}"
+      with_items: "{{ loopbacks }}"
 
 
 
