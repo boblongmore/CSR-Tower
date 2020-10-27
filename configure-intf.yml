@@ -4,11 +4,16 @@
   collections:
   - cisco.ios
   tasks:
-    - name: Configure CSR Interfaces
+    - name: Configure IP address on Interfaces
       ios_l3_interfaces:
         config:
         - name: GigabitEthernet2
           ipv4:
           - address: "{{ ip_addr }}"
+    - name: enable interfaces
+      ios_interfaces:
+        config:
+        - name: GigabitEthernet2
+          enable: true
 
 
