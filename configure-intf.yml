@@ -14,6 +14,6 @@
       ios_interfaces:
         config:
         - name: GigabitEthernet2
-          enable: true
+          enabled: true
 
 
