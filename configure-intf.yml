@@ -1,10 +1,14 @@
 ---
-- name: Configure CSR Router interfaces
-  connection: ansible.netcommon.network.network_cli
+- name: Configure CSR Routers
   hosts: routers
-  cisco.ios.ios_l3_interfaces:
-    config:
-    - name: GigabitEthernet2
+  connection: local
+  collections:
+  - cisco.ios
+  tasks:
+  - name: Configure CSR Interfaces
+    ios_l3_interfaces:
+      config:
+      - name: GigabitEthernet2
       ipv4:
       - address: { ip_addr }
 
