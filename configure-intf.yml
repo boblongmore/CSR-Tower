@@ -4,7 +4,7 @@
   collections:
   - cisco.ios
   tasks:
-    - name: Configure IP address on Interfaces
+    - name: Configure IP address on Gig2
       ios_l3_interfaces:
         config:
         - name: GigabitEthernet2
@@ -15,5 +15,12 @@
         config:
         - name: GigabitEthernet2
           enabled: true
+    - name: Configure IP address on Loopback0
+      ios_l3_interfaces:
+        config:
+        - name: Loopback0
+          ipv4:
+          - address: "{{ loopbacks }}"
+
 
 
