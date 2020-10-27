@@ -1,0 +1,11 @@
+---
+- name: Configure CSR Router interfaces
+  connection: network_cli
+  hosts: routers
+  cisco.ios.ios_l3_interfaces:
+    config:
+    - name: GigabitEthernet2
+      ipv4:
+      - address: { ip_addr }
+
+
