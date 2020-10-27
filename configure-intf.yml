@@ -18,10 +18,10 @@
     - name: Configure IP address on Loopback0
       ios_l3_interfaces:
         config:
-        - name: Loopback0
+        - name: "{{ item.key }}"
           ipv4:
-          - address: "{{ item }}"
-      with_items: "{{ loopbacks }}"
+          - address: "{{ item.value }}"
+      loop: "{{ loopbacks | dict2items }}"
 
 
 
