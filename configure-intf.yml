@@ -8,7 +8,7 @@
     ios_l3_interfaces:
       config:
       - name: GigabitEthernet2
-      ipv4:
-      - address: { ip_addr }
+        ipv4:
+        - address: 100.1.1.2/24
 
 
