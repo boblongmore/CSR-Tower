@@ -1,7 +1,6 @@
 ---
 - name: Configure CSR Routers
   hosts: routers
-  connection: local
   collections:
   - cisco.ios
   tasks:
