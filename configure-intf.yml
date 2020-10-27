@@ -1,6 +1,6 @@
 ---
 - name: Configure CSR Router interfaces
-  connection: network_cli
+  connection: ansible.netcommon.network.network_cli
   hosts: routers
   cisco.ios.ios_l3_interfaces:
     config:
