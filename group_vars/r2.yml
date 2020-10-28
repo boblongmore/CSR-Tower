@@ -3,3 +3,7 @@ ip_addr: 100.1.1.2/24
 loopbacks: 
   loopback1: "2.2.2.1"
   loopback10: "2.2.2.10"
+router_id: 2.2.2.1
+neighbors:
+  r1: 100.1.1.1
+  r3: 100.1.1.3
