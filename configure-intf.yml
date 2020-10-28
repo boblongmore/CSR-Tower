@@ -19,6 +19,6 @@
       ios_config:
         lines:
         - description used for routing
-        - ip address {{ loopbacks }} 255.255.255.255
-        parents: interface loopback1
-      #loop: "{{ loopbacks | dict2items }}"
+        - ip address {{ item.value }} 255.255.255.255
+        parents: interface {{ item.key }}
+      loop: "{{ loopbacks | dict2items }}"

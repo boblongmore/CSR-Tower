@@ -1,5 +1,5 @@
 ---
 ip_addr: 100.1.1.2/24
-loopbacks: 2.2.2.2
-  #loopback1: "2.2.2.1"
-  #loopback10: "2.2.2.10"
+loopbacks: 
+  loopback1: "2.2.2.1"
+  loopback10: "2.2.2.10"
