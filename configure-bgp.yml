@@ -19,4 +19,12 @@
           - neighbor: "{{ item.value }}"
             remote_as: 65001
             description: "neighbor {{ item.key }}"
-      loop: "{{ neighbors | dict2items }}"  
+      loop: "{{ neighbors | dict2items }}"
+
+    - name: Configure networks
+      ios_bgp:
+        config:
+          bgp_as: 65001
+          networks:
+          - prefix: "{{ prefix }}"
+            masklen: 24

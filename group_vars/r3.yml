@@ -7,3 +7,5 @@ router_id: 3.3.3.1
 neighbors:
   r2: 100.1.1.2
   r1: 100.1.1.1
+
+prefix: 3.3.3.0
