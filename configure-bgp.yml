@@ -4,10 +4,10 @@
   collections:
   - cisco.ios
   tasks:
-    - name: Configure IP address on Gig2
+    - name: Configure BGP
       ios_bgp:
         config:
-          bgp_as: 65001
+        - bgp_as: 65001
           router_id: "{{ router_id }}"
           #log_neighbor_changes: true
           neighbors:
