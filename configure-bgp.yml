@@ -7,7 +7,7 @@
     - name: Configure BGP
       ios_bgp:
         config:
-        - bgp_as: 65001
+          bgp_as: 65001
           router_id: "{{ router_id }}"
           #log_neighbor_changes: true
         #  neighbors:
