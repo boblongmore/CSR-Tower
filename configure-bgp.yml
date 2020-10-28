@@ -7,11 +7,11 @@
     - name: Configure IP address on Gig2
       ios_bgp:
         config:
-        - bgp_as: 65001
-          router_id: {{ router_id }}
+          bgp_as: 65001
+          router_id: "{{ router_id }}"
           #log_neighbor_changes: true
           neighbors:
-          - neighbor: {{ item.value }}
+          - neighbor: "{{ item.value }}"
             remote_as: 65001
             description: "neighbor {{ item.key }}"
           loop: {{ neighbors | dict2items }}  
