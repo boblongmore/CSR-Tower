@@ -8,7 +8,7 @@
       cli_parse:
         command: show ip bgp neighbors
         parser:
-          name: pyats
+          name: ansible.netcommon.pyats
         set_fact: interfaces
 
     
