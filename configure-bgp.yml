@@ -7,9 +7,9 @@
     - name: Configure IP address on Gig2
       ios_bgp:
         config:
-          bgp_as: 65001
+        - bgp_as: 65001
           router_id: {{ router_id }}
-          log_neighbor_changes: true
+          #log_neighbor_changes: true
           neighbors:
           - neighbor: {{ item.value }}
             remote_as: 65001
