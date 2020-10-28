@@ -1,0 +1,12 @@
+---
+- name: use pyats to find bgp info
+  hosts: routers
+  tasks:
+    - name: get bgp info
+      cli_parse:
+        command: show ip bgp neighbors
+        parser:
+          name: pyats
+        set_fact: interfaces
+
+    
