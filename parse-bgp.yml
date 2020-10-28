@@ -1,6 +1,8 @@
 ---
 - name: use pyats to find bgp info
   hosts: routers
+  collections:
+  - ansible.netcommon
   tasks:
     - name: get bgp info
       cli_parse:
