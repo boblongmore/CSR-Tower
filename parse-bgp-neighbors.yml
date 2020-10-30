@@ -13,4 +13,4 @@
     #    parsing_output: "{{ cli_output.stdout | pyats_parser('show bgp neighbors', 'iosxe') }}"
     - name: debug
       debug:
-        var: "{{ cli_output.stdout }}"
+        var: "{{ cli_output.stdout[0] }}"
