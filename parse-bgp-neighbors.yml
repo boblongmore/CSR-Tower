@@ -10,4 +10,4 @@
       register: cli_output
     - name: debug
       debug:
-        msg: "{{ cli_output.stdout | pyats_parser('show bgp neighbors', 'iosxe') }}"
+        msg: "{{ cli_output.stdout | pyats_parser('show bgp neighbors', 'iosxe', 'list_of_neighbors') }}"
