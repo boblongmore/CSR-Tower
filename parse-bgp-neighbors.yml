@@ -8,6 +8,9 @@
       cli_command:
         command: show bgp neighbors
       register: cli_output
+    - name: parsing ouput
+      set_fact:
+        parsing_output: "{{ cli_output.stdout | pyats_parser('show bgp neighbors', 'iosxe') }}"
     - name: debug
       debug:
-        var: "{{ cli_output.stdout | pyats_parser('show bgp neighbors', 'iosxe') }}"
+        var: "{{ parsing_output.stdout }}"
