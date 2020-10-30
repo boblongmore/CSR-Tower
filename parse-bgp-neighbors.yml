@@ -1,0 +1,13 @@
+---
+- name: use pyats to find bgp info
+  hosts: routers
+  roles:
+  - ansible-pyats
+  tasks:
+    - name: run show bgp neighbors
+      cli_command:
+        command: show bgp neighbors
+      register: cli_output
+    - name: debug
+      debug:
+        msg: "{{ cli_output.stdout | pyats_parser('show bgp neighbors', 'iosxe') }}"
