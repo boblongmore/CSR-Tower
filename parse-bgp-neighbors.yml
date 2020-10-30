@@ -4,9 +4,9 @@
   roles:
   - ansible-pyats
   tasks:
-    - name: run show bgp summary
+    - name: run show bgp neighbors
       cli_command:
-        command: show bgp summary
+        command: show bgp neighbors
       register: cli_output
     - name: parsing output
       set_fact:
