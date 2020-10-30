@@ -10,4 +10,4 @@
       register: cli_output
     - name: parsing output
       set_fact:
-        parsed_output: "{{ cli_output.stdout | pyats_parser('show bgp neighbors', 'os=iosxe') }}"
+        parsed_output: "{{ cli_output.stdout | pyats_parser('show bgp neighbors', 'iosxe') }}"
