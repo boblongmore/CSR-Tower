@@ -6,7 +6,7 @@
   - ansible-pyats
   tasks:
     - pyats_parse_command:
-        command: show ip route bgp
+        command: show ip bgp neighbors
       register: output
     - debug:
         var: output.structured
