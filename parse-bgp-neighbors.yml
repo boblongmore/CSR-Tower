@@ -11,4 +11,6 @@
     - debug:
         var: output.structured
     - debug:
-        var: "{{ output.structured | community.general.json_query('list_of_neighbors.[*]') }}"
+        var: item
+      loop: "{{ output.structured | community.general.json_query('list_of_neighbors[*]') }}"
+
