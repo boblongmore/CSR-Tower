@@ -14,4 +14,5 @@
     - name: print bgp neighbors
       #register: "{{ parsing_output | subelements('list_of_neighbors') }}"
       debug:
-        var: "{{ parsing_output | community.general.json_query('list_of_neighbors[].name') }}" 
+        #var: "{{ parsing_output | community.general.json_query('list_of_neighbors[].name') }}" 
+        var: "{{ parsing_output }}" 
