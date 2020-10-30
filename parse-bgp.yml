@@ -2,13 +2,13 @@
 - name: use pyats to find bgp info
   hosts: routers
   collections:
-  - ansible.netcommon
+  roles:
+  - ansible-pyats
   tasks:
-    - name: get bgp info
-      cli_parse:
-        command: show ip bgp neighbors
-        parser:
-          name: ansible.netcommon.pyats
-        set_fact: interfaces
+    - pyats_parse_command:
+        command: show ip route bgp
+      register: output
+    - debug:
+        var: output.structured
 
     
