@@ -4,10 +4,10 @@
   roles:
   - ansible-pyats
   tasks:
-    - name: run show ip bgp neighbors
+    - name: run show bgp summary
       cli_command:
-        command: show ip bgp neighbors
+        command: show bgp summary
       register: cli_output
     - name: parsing output
       set_fact:
-        parsed_output: "{{ cli_output.stdout | pyats_parser('show ip bgp neighbors', 'list_of_neighbors') }}"
+        parsed_output: "{{ cli_output.stdout | pyats_parser('show bgp "{{ cli_output.stdout | pyats_parser('show bgp summary') }}"
