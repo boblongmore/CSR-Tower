@@ -6,8 +6,8 @@
   tasks:
     - name: configure lookup sources
       ios_system:
-        lookup_source: {{ lookup_intf }}
+        lookup_source: "{{ lookup_intf }}"
         lookup_enabled: yes
     - name: configure name servers
       ios_system:
-        name_servers: {{ dns_server }}
+        name_servers: "{{ dns_server }}"
