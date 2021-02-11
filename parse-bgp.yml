@@ -7,13 +7,10 @@
   tasks:
     - pyats_parse_command:
         command: show ip bgp neighbors
-      #register: output
-      parser:
-        name: ansible.netcommon.json
-      register: list_of_neighbors
-    #- debug:
-    #   var: output.structured
-    - name: parsing output
+      register: output
+    - debug:
+       var: output.structured
+
 
 
     
