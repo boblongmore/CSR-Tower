@@ -13,7 +13,7 @@
       ios_interfaces:
         config:
         - name: "{{ item.key }}"
-          state: absent
+          state: deleted
       loop: "{{ loopbacks | dict2items }}"
     - name: disable int Gig2
       ios_l3_interfaces:
