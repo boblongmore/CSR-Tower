@@ -13,7 +13,7 @@
       ios_l3_interfaces:
         config:
         - name: "{{ item.key }}"
-          state: deleted
+        state: deleted
       loop: "{{ loopbacks | dict2items }}"
       notify: delete loopbacks
     - name: disable int Gig2
