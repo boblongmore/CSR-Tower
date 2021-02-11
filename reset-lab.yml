@@ -21,6 +21,15 @@
         config:
         - name: GigabitEthernet2
         state: deleted
+    - name: remove lookup interface
+      ios_system:
+        lookup_source: "{{ lookup_intf }}"
+        lookup_enabled: yes
+      state: absent
+    - name: remove name servers
+      ios_system:
+        name_servers: "{{ dns_server }}"
+      state: absent
 
   handlers:
     - name: delete loopbacks
