@@ -25,11 +25,11 @@
       ios_system:
         lookup_source: "{{ lookup_intf }}"
         lookup_enabled: yes
-      state: absent
+        state: absent
     - name: remove name servers
       ios_system:
         name_servers: "{{ dns_server }}"
-      state: absent
+        state: absent
 
   handlers:
     - name: delete loopbacks
