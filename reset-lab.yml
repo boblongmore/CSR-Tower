@@ -1,0 +1,39 @@
+---
+- name: Configure CSR Routers
+  hosts: routers
+  collections:
+  - cisco.ios
+  tasks:
+    - name: remove bgp as 65001
+      ios_bgp:
+        config:
+          bgp_as: 65001
+        operation: delete
+<<<<<<< HEAD
+#    - name: delete loopback addresses
+#      ios_config:
+#        lines:
+#        - no interface {{ item.key }}
+#      loop: "{{ loopbacks | dict2items }}"
+=======
+    - name: Delete Loopbacks
+      ios_interfaces:
+        config:
+        - name: "{{ item.key }}"
+          state: absent
+      loop: "{{ loopbacks | dict2items }}"
+    #- name: delete loopback addresses
+    #  ios_config:
+    #    lines:
+    #    - no interface {{ item.key }}
+    #  loop: "{{ loopbacks | dict2items }}"
+>>>>>>> c848575b4a499ed0528a9a13d4a606aa10500110
+    - name: disable int Gig2
+      ios_l3_interfaces:
+        config:
+        - name: GigabitEthernet2
+        state: deleted
+
+
+
+
