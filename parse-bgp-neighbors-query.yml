@@ -6,11 +6,11 @@
   tasks:
     - name: run show bgp neighbors
       cli_command:
-        command: show bgp neighbors
+        command: show ip bgp neighbors
       register: cli_output
     - name: debug
       debug:
-        var: "{{ cli_output.stdout | pyats_parser('show bgp neighbors', 'iosxe') }}"
+        var: "{{ cli_output.stdout | pyats_parser('show ip bgp neighbors', 'iosxe') }}"
     #- name: print bgp neighbors
     #  #register: "{{ parsing_output | subelements('list_of_neighbors') }}"
     #  debug:
