@@ -9,11 +9,10 @@
         config:
           bgp_as: 65001
         operation: delete
-    - name: remove loopback interfaces
-      ios_interfaces:
-        config:
-        - name: "{{ item.key }}"
-        state: deleted
+    - name: Configure IP address on Loopback0
+      ios_config:
+        lines:
+        - no interface {{ item.key }}
       loop: "{{ loopbacks | dict2items }}"
 
 
