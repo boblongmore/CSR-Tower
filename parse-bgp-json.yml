@@ -1,0 +1,16 @@
+---
+- name: use pyats to find bgp info
+  hosts: routers
+  collections:
+  roles:
+  - ansible-pyats
+  tasks:
+    - pyats_parse_command:
+        command: show ip bgp neighbors
+      register: output
+    - debug:
+       var: output.structured['list_of_neighbors']
+
+
+
+    
