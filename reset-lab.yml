@@ -25,8 +25,7 @@
   handlers:
     - name: delete loopbacks
       ios_config:
-        lines:
-        - no interface "{{ item.key }}"
+        lines: no interface "{{ item.key }}"
       loop: "{{ loopbacks | dict2items }}"
         
 
