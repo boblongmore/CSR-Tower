@@ -10,11 +10,12 @@
           bgp_as: 65001
         operation: delete
     - name: Delete Loopbacks
-      ios_interfaces:
+      ios_l3_interfaces:
         config:
-        - name: "{{ item.key }}"
-          state: absent
-      loop: "{{ loopbacks | dict2items }}"
+        #- name: "{{ item.key }}"
+        - name: Loopback1
+        state: deleted
+      #loop: "{{ loopbacks | dict2items }}"
     - name: disable int Gig2
       ios_l3_interfaces:
         config:
