@@ -1,0 +1,14 @@
+plugin: netbox.netbox.nb_inventory
+api_endpoint: http://172.16.1.124
+validate_certs: false
+#config_context: false
+token: 9514b1e12792a2f8ba78055dd9faf13199acac10
+group_by:
+  - device_roles
+#device_query_filters:
+#  - has_primary_ip: 'true'
+#compose:
+# ansible_network_os: platform.slug
+#query_filters:
+# - site: "BobCorpHQ"
+# - has_primary_ip: True
