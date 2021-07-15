@@ -1,4 +1,9 @@
 ---
-- src: https://github.com/CiscoDevNet/ansible-pyats
-  scm: git
-  name: ansible-pyats
+collections:
+  - name: cisco.ios
+    source: https://galaxy.ansible.com
+roles:
+  - name: ansible-pyats
+    src: git+https://github.com/CiscoDevNet/ansible-pyats
+    #scm: git
+    
