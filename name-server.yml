@@ -1,6 +1,7 @@
 ---
 - name: Configure name servers
   hosts: routers
+  gather_facts: false
   collections:
   - cisco.ios
   tasks:
