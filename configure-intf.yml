@@ -1,6 +1,7 @@
 ---
 - name: Configure CSR Routers
   hosts: routers
+  gather_facts: False
   collections:
   - cisco.ios
   tasks:
